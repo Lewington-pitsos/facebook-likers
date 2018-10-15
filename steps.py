@@ -27,9 +27,3 @@ def keep_scrolling(driver):
         else:
             print("We couldn't find the end results notifier or the loading box. Something probably went wrong. Maybe the Zucc is onto us.")
             return False
-
-
-def write_likers_file(driver):
-    f = open("likers.html", "a")
-    f.write(driver.page_source)
-    f.close()

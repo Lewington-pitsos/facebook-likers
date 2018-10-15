@@ -1,12 +1,16 @@
 import sys
 import time
 import steps
+import save
 from selenium import webdriver
 
-page_id = 1951319155178263
+page_id = sys.argv[1]
+page_name = sys.argv[2]
 
-if page_id is None:
-    raise ValueError("No page_id provided.")
+if page_id is None or page_name is None:
+    raise ValueError("No page id or page name provided. Sort yourself out m8.")
+
+
 
 user_email = "sallymuntzy@outlook.com"
 user_password = "r34hge%V&BF3ghf"
@@ -25,7 +29,7 @@ driver.get(likers_url)
 
 steps.keep_scrolling(driver)
 
-steps.write_likers_file(driver)
+save.save_likers(driver.page_source, page_name)
 
 print("Hell yeah")
 
