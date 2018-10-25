@@ -1,4 +1,4 @@
-#!/home/lewington/code/scrapers/env/bin/python
+#!/home/lewington/code/scrapers/likers/env/bin/python
 
 import sys
 import getopt
