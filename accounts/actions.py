@@ -9,7 +9,7 @@ def like_some_things(driver, db=None):
             link.click()
             if db is not None:
                 db.save_link(link.get_attribute("outerHTML"), link_type="like")
-            time.sleep(random.randint(1, 8))
+            time.sleep(random.randint(5, 18))
 
         except:
             if db is not None:
@@ -48,10 +48,35 @@ def navigate_somewhere(driver, db=None):
     
     return navigate_to_page_link(driver, db)
 
+def scroll_down(driver):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight + 1000);")
+    time.sleep(random.randint(3, 12))
    
+def visit_profile(driver):
+    try:
+        driver.find_element_by_xpath("//img[contains(@id, 'profile_pic_header')]/parent::span/parent::a").click()
+    except:
+        pass
+
+def click_upload_profile_link(driver):
+    # The text of this link is different if it is your first time uploading
+    # a file. The text is still the best thing to go off probably because all
+    # the other identifiers seem pretty wack.
+    links = driver.find_elements_by_xpath("//a[text()='Add Photo']")
+
+    if len(links) == 0:
+        links = driver.find_elements_by_xpath("//a[text()='Upload']")
+    
+    links[0].click()
+    time.sleep(5)
 
 
+def upload_and_confirm(driver, picture_path: str):
+    # Actually uploads the file
+    driver.find_element_by_xpath("//input[@title='Choose a file to upload']").send_keys(picture_path)
+    time.sleep(20)
 
-
-
+    # Confirms the upload
+    driver.find_element_by_xpath("//button[text()='Post']").click()
+    time.sleep(6)
 

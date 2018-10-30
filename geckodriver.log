@@ -1,0 +1,44 @@
+1540859776606	geckodriver	INFO	geckodriver 0.21.0
+1540859776615	geckodriver	INFO	Listening on 127.0.0.1:34155
+1540859777714	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.tvE7VS7U2iTR"
+1540859780084	Marionette	DEBUG	Received observer notification profile-after-change
+1540859780945	Marionette	DEBUG	Received observer notification command-line-startup
+1540859780945	Marionette	DEBUG	Received observer notification nsPref:changed
+1540859780946	Marionette	DEBUG	Init aborted (running=false, enabled=true, finalUIStartup=false)
+1540859783627	Marionette	DEBUG	Received observer notification toplevel-window-ready
+1540859789785	Marionette	DEBUG	Received observer notification sessionstore-windows-restored
+1540859789785	Marionette	DEBUG	Waiting for delayed startup...
+1540859790754	Marionette	DEBUG	Setting recommended pref app.update.disabledForTesting to true
+1540859790792	Marionette	DEBUG	Setting recommended pref security.turn_off_all_security_so_that_viruses_can_take_over_this_computer to true
+1540859790793	Marionette	DEBUG	Setting recommended pref apz.content_response_timeout to 60000
+1540859790794	Marionette	DEBUG	Setting recommended pref browser.download.panel.shown to true
+1540859790794	Marionette	DEBUG	Setting recommended pref browser.pagethumbnails.capturing_disabled to true
+1540859790795	Marionette	DEBUG	Setting recommended pref browser.search.update to false
+1540859790795	Marionette	DEBUG	Setting recommended pref toolkit.cosmeticAnimations.enabled to false
+1540859790796	Marionette	DEBUG	Setting recommended pref browser.tabs.disableBackgroundZombification to false
+1540859790796	Marionette	DEBUG	Setting recommended pref browser.tabs.warnOnCloseOtherTabs to false
+1540859790796	Marionette	DEBUG	Setting recommended pref browser.tabs.warnOnOpen to false
+1540859790796	Marionette	DEBUG	Setting recommended pref browser.usedOnWindows10.introURL to 
+1540859790796	Marionette	DEBUG	Setting recommended pref browser.urlbar.suggest.searches to false
+1540859790796	Marionette	DEBUG	Setting recommended pref datareporting.policy.dataSubmissionPolicyAccepted to false
+1540859790797	Marionette	DEBUG	Setting recommended pref dom.disable_beforeunload to true
+1540859790797	Marionette	DEBUG	Setting recommended pref dom.disable_open_during_load to false
+1540859790797	Marionette	DEBUG	Setting recommended pref dom.file.createInChild to true
+1540859790797	Marionette	DEBUG	Setting recommended pref dom.max_chrome_script_run_time to 0
+1540859790798	Marionette	DEBUG	Setting recommended pref dom.max_script_run_time to 0
+1540859790798	Marionette	DEBUG	Setting recommended pref extensions.getAddons.cache.enabled to false
+1540859790798	Marionette	DEBUG	Setting recommended pref extensions.webservice.discoverURL to http://%(server)s/dummy/discoveryURL
+1540859790798	Marionette	DEBUG	Setting recommended pref network.http.prompt-temp-redirect to false
+1540859790799	Marionette	DEBUG	Setting recommended pref network.http.speculative-parallel-limit to 0
+1540859790799	Marionette	DEBUG	Setting recommended pref security.fileuri.strict_origin_policy to false
+1540859790800	Marionette	DEBUG	Setting recommended pref security.notification_enable_delay to 0
+1540859790800	Marionette	DEBUG	Setting recommended pref signon.autofillForms to false
+1540859790801	Marionette	DEBUG	Setting recommended pref signon.rememberSignons to false
+1540859791303	Marionette	INFO	Listening on port 45021
+1540859791303	Marionette	DEBUG	Remote service is active
+1540859791338	Marionette	DEBUG	Accepted connection 0 from 127.0.0.1:52738
+1540859791341	Marionette	TRACE	0 -> [0,1,"WebDriver:NewSession",{"acceptInsecureCerts":true,"browserName":"firefox","capabilities":{"desiredCapabilities":{"acceptInsecureCerts":true,"browserName":"firefox"}}}]
+1540859791341	Marionette	WARN	TLS certificate errors will be ignored for this session
+1540859791393	Marionette	DEBUG	[4294967297] Frame script loaded
+1540859791394	Marionette	DEBUG	[4294967297] Frame script registered
+1540859791400	Marionette	TRACE	0 <- [1,1,null,{"sessionId":"fe9a3cae-47b1-4537-88d4-98b5d77621d3","capabilities":{"browserName":"firefox","browserVersion":"63.0" ... alse,"moz:webdriverClick":true,"capabilities":{"desiredCapabilities":{"acceptInsecureCerts":true,"browserName":"firefox"}}}}]
