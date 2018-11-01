@@ -2,6 +2,8 @@ import time
 import random
 import accounts.actions as actions
 
+from details import details
+
 def idly_click_around(driver, database, times: int):
     for i in range(times):
         for i in range(2):
@@ -24,4 +26,9 @@ def upload_profile_pic(driver, picture_path):
     actions.upload_and_confirm(driver, picture_path)
 
 
+def add_random_friend(driver):
+    friend_name = details.random_name_string()
+    actions.search_for(driver, friend_name)
+    actions.click_friend_request_button(driver)
+    actions.navigate_home(driver)
 

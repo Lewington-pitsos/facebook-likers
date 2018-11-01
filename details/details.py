@@ -50,6 +50,9 @@ def random_name(male=True):
 
     return (random.choice(names), random.choice(names))
 
+def random_name_string():
+    return " ".join(random_name(random.randint(0, 1) == 0))
+
 def password():
     password = ""
     for _ in range(random.randint(10, 16)):

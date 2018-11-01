@@ -1,5 +1,7 @@
 import time
 import random
+from lep.selenium import utils
+from selenium.webdriver.common.keys import Keys
 
 def like_some_things(driver, db=None):
     like_links = driver.find_elements_by_xpath("//a[contains(@class, 'UFILikeLink')]") + driver.find_elements_by_xpath("//button[contains(@class, 'PageLikeButton')]")
@@ -84,3 +86,21 @@ def search(driver, term: str):
     # slow type to search thingo
     # press eneter
     time.sleep(random.randint(7, 23))
+
+def search_for(driver, name):
+    search_bar = driver.find_element_by_xpath("//input[@aria-label='Search' and @data-testid='search_input']")
+    utils.slow_fill(search_bar, name)
+    search_bar.send(Keys.RETURN)
+    time.sleep(random.uniform(0.8, 12))
+
+def click_friend_request_button(driver):
+    candidate_friends = driver.find_elements_by_xpath("//button[@aria-label='Add Friend' and contains(@class, 'FriendRequestAdd')]")
+
+    for add_button in candidate_friends:
+        try: 
+            add_button.click()
+            break
+        except:
+            pass
+
+    time.sleep(random.uniform(0.8, 12))
