@@ -18,6 +18,18 @@ CREATE TABLE links_encountered (
     PRIMARY KEY(id)
 );
 
+CREATE TABLE fake_users (
+    id SERIAL,
+    profile_pic_path VARCHAR(100),
+    first_name VARCHAR(20) NOT NULL,
+    last_name VARCHAR(25) NOT NULL,
+    birth_day INTEGER NOT NULL,
+    birth_month CHAR(3) NOT NULL,
+    birth_year INTEGER NOT NULL,
+    pass VARCHAR(20) NOT NULL,
+    temp_mail VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id),
+);
 
 INSERT INTO links_encountered (link_type, outer_html, good, bad)
         VALUES('nav', 'window', 0, 1)

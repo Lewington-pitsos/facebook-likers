@@ -62,10 +62,10 @@ def click_upload_profile_link(driver):
     # The text of this link is different if it is your first time uploading
     # a file. The text is still the best thing to go off probably because all
     # the other identifiers seem pretty wack.
-    links = driver.find_elements_by_xpath("//a[text()='Add Photo']")
+    links = driver.find_elements_by_xpath("//div[@id='fbProfileCover']//a[text()='Add Photo']")
 
     if len(links) == 0:
-        links = driver.find_elements_by_xpath("//a[text()='Upload']")
+        links = driver.find_elements_by_xpath("//div[@id='fbProfileCover']//a[text()='Upload']")
     
     links[0].click()
     time.sleep(5)
@@ -74,9 +74,13 @@ def click_upload_profile_link(driver):
 def upload_and_confirm(driver, picture_path: str):
     # Actually uploads the file
     driver.find_element_by_xpath("//input[@title='Choose a file to upload']").send_keys(picture_path)
-    time.sleep(20)
+    time.sleep(30)
 
     # Confirms the upload
     driver.find_element_by_xpath("//button[text()='Post']").click()
     time.sleep(6)
 
+def search(driver, term: str):
+    # slow type to search thingo
+    # press eneter
+    time.sleep(random.randint(7, 23))

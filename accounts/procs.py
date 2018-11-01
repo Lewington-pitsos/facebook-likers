@@ -18,6 +18,8 @@ def idly_click_around(driver, database, times: int):
 
 def upload_profile_pic(driver, picture_path):
     actions.visit_profile(driver)
+    time.sleep(random.randint(6, 12))
+    print("asdasd")
     actions.click_upload_profile_link(driver)
     actions.upload_and_confirm(driver, picture_path)
 
