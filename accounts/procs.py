@@ -20,7 +20,7 @@ def idly_click_around(driver, database, times: int):
 
 def upload_profile_pic(driver, picture_path):
     actions.visit_profile(driver)
-    time.sleep(random.randint(6, 12))
+    time.sleep(random.randint(12, 20))
     print("asdasd")
     actions.click_upload_profile_link(driver)
     actions.upload_and_confirm(driver, picture_path)
@@ -32,3 +32,7 @@ def add_random_friend(driver):
     actions.click_friend_request_button(driver)
     actions.navigate_home(driver)
 
+def add_some_friends(driver, database, times: int = 5):
+    for i in range(times):
+        idly_click_around(driver, database, 3)
+        add_random_friend(driver)

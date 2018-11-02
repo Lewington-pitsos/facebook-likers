@@ -67,7 +67,8 @@ def click_upload_profile_link(driver):
     links = driver.find_elements_by_xpath("//div[@id='fbProfileCover']//a[text()='Add Photo']")
 
     if len(links) == 0:
-        links = driver.find_elements_by_xpath("//div[@id='fbProfileCover']//a[text()='Upload']")
+        print("searching again")
+        links = driver.find_elements_by_xpath("//div[@id='fbProfileCover']//a[text()='Update']")
     
     links[0].click()
     time.sleep(5)
@@ -90,7 +91,7 @@ def search(driver, term: str):
 def search_for(driver, name):
     search_bar = driver.find_element_by_xpath("//input[@aria-label='Search' and @data-testid='search_input']")
     utils.slow_fill(search_bar, name)
-    search_bar.send(Keys.RETURN)
+    search_bar.send_keys(Keys.RETURN)
     time.sleep(random.uniform(0.8, 12))
 
 def click_friend_request_button(driver):

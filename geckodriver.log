@@ -181,3 +181,8 @@ WalkerFront<.getMutations</<@resource://devtools/shared/base-loader.js -> resour
 [Parent 19068, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-j7tNrI/firefox-63.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
 [Parent 19068, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-j7tNrI/firefox-63.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
 [Parent 19068, Gecko_IOThread] WARNING: pipe error: Broken pipe: file /build/firefox-j7tNrI/firefox-63.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 729
+1541116780133	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.kU3yrVkUwZDv"
+1541116781951	Marionette	INFO	Listening on port 37545
+1541116782043	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead

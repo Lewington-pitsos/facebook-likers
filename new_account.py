@@ -1,13 +1,12 @@
 import time
 import sys
 import accounts.procs as procs
-import help.database as database
+import help.writer as writer
 import lep.selenium.setup as setup
 from accounts import create, mail
 from details import details
 
-db = database.db()
-driver = setup.chrome()
+driver = setup.moz()
 user_details = details.new()
 
 print(user_details)
@@ -36,4 +35,4 @@ while True:
             print("We have failed {} times, the problem is probably chronic. Exiting scrape".format(fails))
             sys.exit(0)
 
-db.save_user(user_details)
+writer.save_details(user_details)
