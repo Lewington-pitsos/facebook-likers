@@ -11,7 +11,6 @@ def truncate(value: str, length: int) -> str:
     
     return value
 
-
 class db:
     def __init__(self):
         self.connection = psycopg2.connect(conn_str)
@@ -36,7 +35,7 @@ class db:
 
     def save_user(self, details: dict):
         self.cursor.execute("""
-        INSERT INTO fake_users (first_name, last_name, birth_day, birth_month, birth_year, pass, temp_mail, ip, computer_name) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+        INSERT INTO fake_users (first_name, last_name, birth_day, birth_month, birth_year, pass, temp_mail, browser, ip, computer_name) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (
             details["first_name"],
             details["last_name"],
@@ -45,6 +44,7 @@ class db:
             details["birth_year"],
             details["password"],
             details["mail"],
+            details["browser"],
             requests.get('http://ip.42.pl/raw').text,
             platform.node(),
         ))
@@ -52,7 +52,7 @@ class db:
     
     def choose_fake_user(self):
         self.cursor.execute("""
-        SELECT * FROM fake_users ORDER BY times_used ASC LIMIT 1
+        SELECT * FROM fake_users WHERE flagged = False ORDER BY times_used ASC LIMIT 1
         """)
         return self.cursor.fetchone()
     

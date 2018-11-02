@@ -26,7 +26,7 @@ def fill_details(driver, details):
         details["password"]
     )
 
-    driver.find_element_by_xpath("//select[@name='birthday_day']//option[text()='{}']".format(details["birth_day"])).click()
+    driver.find_element_by_xpath("//select[@name='birthday_day']//option[contains(text(), '{}')]".format(details["birth_day"])).click()
     time.sleep(0.3)
 
     driver.find_element_by_xpath("//select[@name='birthday_month']//option[text()='{}']".format(details["birth_month"])).click()
@@ -59,3 +59,17 @@ def enter_email_code(driver, code):
     time.sleep(random.randint(6, 12))
 
     driver.find_element_by_xpath("//a[text()='OK']").click()
+    time.sleep(7.3)
+
+
+def complete_signup(driver, profile_pic_path):
+    driver.find_element_by_xpath("//a[text()='Next']").click()
+    time.sleep(6.2)
+
+    confirm = driver.find_elements_by_xpath("//a[text()='Skip Step']")
+    if len(confirm) > 0:
+        confirm[0].click()
+        time.sleep(6.6)
+
+    driver.find_element_by_xpath("//input[@title='Choose a file to upload']").send_keys(profile_pic_path)
+

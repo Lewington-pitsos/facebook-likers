@@ -2,6 +2,8 @@ import time
 import random
 import accounts.actions as actions
 
+
+
 from details import details
 
 def idly_click_around(driver, database, times: int):

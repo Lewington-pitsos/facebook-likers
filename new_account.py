@@ -1,38 +1,48 @@
 import time
 import sys
 import accounts.procs as procs
-import help.writer as writer
-import lep.selenium.setup as setup
+import help.database as database
+from lep.selenium import setup, utils
 from accounts import create, mail
 from details import details
 
-driver = setup.moz()
+params = sys.argv
+
+if len(params) == 2 and params[1] == 'moz':
+    driver = setup.moz()
+    browser = "moz"
+else:
+    driver = setup.chrome()
+    browser = "chrome"
+
+db = database.db()
 user_details = details.new()
+user_details["browser"] = browser
 
 print(user_details)
 
-fails = 0
+success, email = utils.attempt(mail.email_name, driver)
+user_details["mail"] = email
+print(email)
 
-while True:
-    try:
-        email = mail.email_name(driver)
+if success:
+    success, _ = utils.attempt(create.fill_details, driver, user_details)
 
-        user_details["mail"] = email
-        print(email)
+if success:
+    time.sleep(9)
+    db.save_user(user_details)
+    profile_pic = details.random_image()
+    success, code = mail.emailed_code(driver)
 
-        create.fill_details(driver, user_details)
-        time.sleep(9)
+if success:
+    success, _ = utils.attempt(create.enter_email_code, driver, code)
 
-        code = mail.emailed_code(driver)
-        create.enter_email_code(driver, code)
+if success:
+    success, _ = utils.attempt(create.complete_signup, driver, profile_pic)
 
-        break
-    except Exception as e:
-        print(e)
-        print("something went wrong with the account creation process, trying again")
-        fails += 1
-        if fails > 6:
-            print("We have failed {} times, the problem is probably chronic. Exiting scrape".format(fails))
-            sys.exit(0)
+if success:
+    details.mark_as_used(profile_pic)
 
-writer.save_details(user_details)
+for _ in range(2):
+    if success:
+        success, _ = utils.attempt(procs.add_random_friend, driver)

@@ -50,6 +50,28 @@ def random_name(male=True):
 
     return (random.choice(names), random.choice(names))
 
+def random_image(male=True):
+    # Change directory so we can find the name files
+    original_directory = os.getcwd()
+    abspath = os.path.abspath(__file__)
+    dname = os.path.dirname(abspath)
+    os.chdir(dname)
+
+    gender = "1" if male else "0"
+
+    files = [f for f in os.listdir("pics") if f.split("_")[1] == gender and "used" not in f]
+
+    pic_path = dname + "/pics/" + random.choice(files)
+    
+    # Return directory to what it was before
+    os.chdir(original_directory)
+
+    return pic_path
+
+def mark_as_used(image_path):
+    new_path = image_path.replace(".jpg", "-used.jpg")
+    os.rename(image_path, new_path)
+
 def random_name_string():
     return " ".join(random_name(random.randint(0, 1) == 0))
 
