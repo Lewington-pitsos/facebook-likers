@@ -15,7 +15,3 @@ def attempt(callback, *args):
     except Exception as e:
         print(e)
         return (False, None)
-
-
-def randfunc(a, b):
-    return a + b

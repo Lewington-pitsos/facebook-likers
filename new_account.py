@@ -12,8 +12,8 @@ if len(params) == 2 and params[1] == 'moz':
     driver = setup.moz()
     browser = "moz"
 else:
-    driver = setup.chrome()
-    browser = "chrome"
+    driver = setup.moz()
+    browser = "moz"
 
 db = database.db()
 user_details = details.new()
@@ -32,7 +32,7 @@ if success:
     time.sleep(9)
     db.save_user(user_details)
     profile_pic = details.random_image()
-    success, code = mail.emailed_code(driver)
+    success, code = utils.attempt(mail.emailed_code, driver)
 
 if success:
     success, _ = utils.attempt(create.enter_email_code, driver, code)

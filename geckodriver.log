@@ -353,3 +353,23 @@ JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.m
 [Parent 10359, Gecko_IOThread] WARNING: pipe error (60): Connection reset by peer: file /build/firefox-j7tNrI/firefox-63.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 356
 [Parent 10359, Gecko_IOThread] WARNING: pipe error (77): Connection reset by peer: file /build/firefox-j7tNrI/firefox-63.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 356
 1541138379116	Marionette	INFO	Stopped listening on port 42185
+1541157289147	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.ipRdaqX3ekgU"
+1541157291100	Marionette	INFO	Listening on port 41009
+1541157291160	Marionette	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js, line 1: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+[Parent 3923, Gecko_IOThread] WARNING: pipe error (77): Connection reset by peer: file /build/firefox-j7tNrI/firefox-63.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 356
+[Parent 3923, Gecko_IOThread] WARNING: pipe error (85): Connection reset by peer: file /build/firefox-j7tNrI/firefox-63.0+build2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 356
+1541157577332	Marionette	INFO	Stopped listening on port 41009
